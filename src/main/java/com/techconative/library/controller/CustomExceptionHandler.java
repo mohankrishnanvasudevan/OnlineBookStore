@@ -11,6 +11,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 import com.techconative.library.exception.ResourceNotFoundExecption;
+import com.techconative.library.exception.UnauthorizedException;
+import com.techconative.library.exception.ValidationException;
 import com.techconative.library.response.ErrorResponse;
 
 @RestControllerAdvice
@@ -26,6 +28,28 @@ public class CustomExceptionHandler
     	errorResponse.setMessage(ex.getMessage());
     	errorResponse.setTimestamp(new Timestamp(new Date().getTime()));
         return new ResponseEntity<Object>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+    
+    @ExceptionHandler({ UnauthorizedException.class })
+    public ResponseEntity<Object> handleUnAuthorizedException(
+      Exception ex, WebRequest request) {
+    	ErrorResponse errorResponse = new ErrorResponse();
+    	errorResponse.setStatus(HttpStatus.UNAUTHORIZED.value());
+    	errorResponse.setError(HttpStatus.UNAUTHORIZED.getReasonPhrase());
+    	errorResponse.setMessage(ex.getMessage());
+    	errorResponse.setTimestamp(new Timestamp(new Date().getTime()));
+        return new ResponseEntity<Object>(errorResponse, HttpStatus.UNAUTHORIZED);
+    }
+    
+    @ExceptionHandler({ ValidationException.class })
+    public ResponseEntity<Object> handleValidationException(
+      Exception ex, WebRequest request) {
+    	ErrorResponse errorResponse = new ErrorResponse();
+    	errorResponse.setStatus(HttpStatus.BAD_REQUEST.value());
+    	errorResponse.setError(HttpStatus.BAD_REQUEST.getReasonPhrase());
+    	errorResponse.setMessage(ex.getMessage());
+    	errorResponse.setTimestamp(new Timestamp(new Date().getTime()));
+        return new ResponseEntity<Object>(errorResponse, HttpStatus.BAD_REQUEST);
     }
     
 }

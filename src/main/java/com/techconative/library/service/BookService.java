@@ -7,7 +7,7 @@ import com.techconative.library.request.BookRequest;
 
 public interface BookService {
 	
-	public List<BookEntity> findAllBooks(String title, String Author);
+	public List<BookEntity> findAllBooks(String title, String genre);
 	
 	public void addBook(BookRequest book);
 	

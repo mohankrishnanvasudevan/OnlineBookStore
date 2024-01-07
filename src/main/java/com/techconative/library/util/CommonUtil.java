@@ -1,4 +1,4 @@
-package com.techconative.library.config.util;
+package com.techconative.library.util;
 
 import org.modelmapper.Condition;
 import org.modelmapper.ModelMapper;

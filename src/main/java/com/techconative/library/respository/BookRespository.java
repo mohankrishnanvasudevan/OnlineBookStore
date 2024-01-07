@@ -6,7 +6,7 @@ import com.techconative.library.entity.BookEntity;
 
 public interface BookRespository {
 	
-	List<BookEntity> findAll(String title, String Author);
+	List<BookEntity> findAll(String title, String genre);
 	
 	void saveEntity(BookEntity entity);
 	

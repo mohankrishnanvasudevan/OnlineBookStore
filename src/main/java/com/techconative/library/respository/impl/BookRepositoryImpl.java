@@ -27,13 +27,15 @@ public class BookRepositoryImpl implements BookRespository {
 	private EntityManager entityManager;
 
 	@Override
-	public List<BookEntity> findAll(String title, String Author) {
+	public List<BookEntity> findAll(String title, String genre) {
 		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
 		CriteriaQuery<BookEntity> cr = cb.createQuery(BookEntity.class);
 		Root<BookEntity> book = cr.from(BookEntity.class);
 		List<Predicate> predicates = new ArrayList<Predicate>();
 		if (StringUtils.isNotEmpty(title))
 			predicates.add(cb.like(book.get("title"), title));
+		if (StringUtils.isNotEmpty(genre))
+			predicates.add(cb.like(book.get("genre"), genre));
 		cr.select(book).where(predicates.toArray(new Predicate[0]));
 
 		return entityManager.createQuery(cr).getResultList();

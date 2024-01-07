@@ -6,12 +6,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.techconative.library.config.util.CommonUtil;
 import com.techconative.library.entity.BookEntity;
 import com.techconative.library.exception.ResourceNotFoundExecption;
+import com.techconative.library.exception.ValidationException;
 import com.techconative.library.request.BookRequest;
 import com.techconative.library.respository.BookRespository;
 import com.techconative.library.service.BookService;
+import com.techconative.library.util.CommonUtil;
 
 import jakarta.persistence.NoResultException;
 import lombok.extern.log4j.Log4j2;
@@ -24,9 +25,9 @@ public class BookServiceImpl implements BookService {
 	private BookRespository bookRespository;
 
 	@Override
-	public List<BookEntity> findAllBooks(String title, String Author) {
+	public List<BookEntity> findAllBooks(String title, String genre) {
 
-		List<BookEntity> books = bookRespository.findAll(title, Author);
+		List<BookEntity> books = bookRespository.findAll(title, genre);
 		return books;
 	}
 
@@ -34,9 +35,7 @@ public class BookServiceImpl implements BookService {
 	public void addBook(BookRequest book) {
 
 		try {
-			log.info(book);
 			BookEntity entity = new ModelMapper().map(book, BookEntity.class);
-			log.info(entity);
 			bookRespository.saveEntity(entity);
 		} catch (Exception e) {
 			log.error(e);
