@@ -19,4 +19,9 @@ cd /build/libs
 java -jar OnlineBookStore.jar
 ```
 
+By default application is configured with in-memory data source. you can find the DB scripts in src/main/resources/
+you can chnage the database to pointing to your prefered one by chnaging datasource properties in src/main/resources/application.properties
+
 Swagger URL:: http://localhost:8080/swagger-ui/index.html#/
+
+![image](https://github.com/mohankrishnanvasudevan/OnlineBookStore/assets/128733715/1b11b706-6af6-4761-a191-5591ab5eb26f)
