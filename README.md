@@ -20,7 +20,7 @@ java -jar OnlineBookStore.jar
 ```
 
 By default application is configured with in-memory data source. you can find the DB scripts in src/main/resources/
-you can chnage the database to pointing to your prefered one by chnaging datasource properties in src/main/resources/application.properties
+you can change the database pointing to your prefered one by changing datasource properties in src/main/resources/application.properties
 
 Swagger URL:: http://localhost:8080/swagger-ui/index.html#/
 
