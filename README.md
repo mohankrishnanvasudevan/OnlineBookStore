@@ -21,7 +21,7 @@ java -jar OnlineBookStore.jar
 You can run the tests with below command 
 
 ```shell
-graldlew test
+gradlew test
 ```
 and you can check the test results from OnlineBookStore/build/reports/tests/test/index.html
 
