@@ -25,9 +25,15 @@ graldlew test
 ```
 and you can check the test results from OnlineBookStore/build/reports/tests/test/index.html
 
+![image](https://github.com/mohankrishnanvasudevan/OnlineBookStore/assets/128733715/c877ce3b-3054-4c31-9e10-1722a17bd915)
+
+
 By default application is configured with in-memory data source. you can find the DB scripts in src/main/resources/
 you can change the database pointing to your prefered one by changing datasource properties in src/main/resources/application.properties
 
 Swagger URL:: http://localhost:8080/online-book-store/swagger-ui/index.html#/
 
-![image](https://github.com/mohankrishnanvasudevan/OnlineBookStore/assets/128733715/1b11b706-6af6-4761-a191-5591ab5eb26f)
+![image](https://github.com/mohankrishnanvasudevan/OnlineBookStore/assets/128733715/5e67cb0d-3c11-4dc1-b03b-50a5ede89f1c)
+
+
+
