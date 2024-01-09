@@ -12,7 +12,7 @@ CREATE TABLE `author` (
 
 DROP TABLE book;
 CREATE TABLE `book` (
-  `book_id` int NOT NULL,
+  `book_id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `publication_date` date DEFAULT NULL,
   `isbn` varchar(20) NOT NULL,

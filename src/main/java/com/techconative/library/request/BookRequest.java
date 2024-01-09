@@ -14,6 +14,10 @@ public class BookRequest {
 		this.genre = genre;
 		this.otherBookDetails = otherBookDetails;
 	}
+	
+	public BookRequest() {
+		
+	}
 
 	private String title;
 

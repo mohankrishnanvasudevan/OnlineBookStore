@@ -10,4 +10,3 @@ INSERT INTO `book` (`book_id`,`title`,`publication_date`,`isbn`,`genre`,`other_b
 INSERT INTO `book` (`book_id`,`title`,`publication_date`,`isbn`,`genre`,`other_book_details`) VALUES (104,'The Forgotten Galaxy','2022-01-05','978-0-543210-98-7','Science Fiction','Epic space adventure');
 INSERT INTO `book` (`book_id`,`title`,`publication_date`,`isbn`,`genre`,`other_book_details`) VALUES (1007,'slient patient','2024-01-07','9780006137122','thriller','thriller');
 
-INSERT INTO `review` (`review_id`,`isbn`,`rating`,`comments`,`review_date`,`user_name`) VALUES (1,'9780006137122',4,'Awesome','2024-01-07','mohan');
